@@ -30,6 +30,8 @@ function runGame(gameType) {
 
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
+    } else if (gameType === "multiply") {
+        displayMultiplyQuestion(num1, num2);
     } else {
         alert(`Unknown game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting!`;
@@ -68,6 +70,8 @@ function calculateCorrectAnswer() {
 
     if (operator === '+') {
         return [operand1 + operand2, 'addition'];
+    } else if (operator === 'X') {
+        return [operand1 * operand2, 'multiply'];
     } else {
         alert (`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
@@ -92,20 +96,39 @@ function incrementWrongAnswer() {
     document.getElementById('incorrect').innerText = ++oldScore;
 }
 
+/**
+ * Displays the addition game
+ */
 function displayAdditionQuestion(operand1, operand2) {
+
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;  //how does this work? How does this understand that is supposed to be 2 numbers?
     document.getElementById('operator').textContent = '+';
 }
 
-function displaySubtractQuestion() {
+/**
+ * Displays the subtraction game
+ */
+function displaySubtractQuestion(operand1, operand2) {
+
+   
 
 }
 
-function displayMultiplyQuestion() {
+/**
+ * Displays the multiply game
+ */
+function displayMultiplyQuestion(operand1, operand2) {
+ 
+    document.getElementById('operand1').textContent = operand1;
+    document.getElementById('operand2').textContent = operand2;
+    document.getElementById('operator').textContent = 'X';
 
 }
 
+/**
+ * Displays the division game
+ */
 function displayDivideQuestion(){
 
 }
